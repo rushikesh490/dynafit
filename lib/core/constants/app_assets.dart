@@ -8,6 +8,8 @@ class AppAssets {
   static const String female = "assets/logo/female.png";
   static const String darkMale = "assets/logo/darkMale.png";
   static const String darkFemale = "assets/logo/darkFemale.png";
+  static const String fitnessExperience = "assets/logo/fitnessExperiience.png";
+  static const String fitnessExperienceDark = "assets/logo/fitnessExperienceDark.png";
 
   /// svg
   static const String aiCoach = "assets/svg/aiCoach.svg";

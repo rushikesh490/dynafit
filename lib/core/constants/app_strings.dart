@@ -13,6 +13,7 @@ class AppStrings {
   static const yourGender = "What is your gender?";
   static const yourAge = "What is your age?";
   static const yourWeight = "What is your weight?";
+  static const fitnessExperience = "Do you have previous fitness experience?";
   static const loseWeight = "I wanna lose weight";
   static const tryAICoach = "I wanna try AI Coach";
   static const getBulk = "I wanna get bulk";
@@ -20,4 +21,7 @@ class AppStrings {
   static const tryingApp = "Just trying out app!";
   static const male = "Male";
   static const female = "Female";
+  static const no = "No";
+  static const yes = "Yes";
+  static const activities = "Activities";
 }

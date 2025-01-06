@@ -4,6 +4,7 @@ import 'package:dynafit/core/constants/app_text_style.dart';
 import 'package:dynafit/ui_components/ver_spacer/ver_spacer.dart';
 import 'package:dynafit/views/assessments/cubit/assessment_cubit.dart';
 import 'package:dynafit/views/assessments/screen/age_selection/age_selection_screen.dart';
+import 'package:dynafit/views/assessments/screen/fitness_experience/fitness_experience_screen.dart';
 import 'package:dynafit/views/assessments/screen/fitness_goals/fitness_goals_screen.dart';
 import 'package:dynafit/views/assessments/screen/gender_selection/gender_selection_screen.dart';
 import 'package:dynafit/views/assessments/screen/weight_selection/weight_selection_screen.dart';
@@ -44,6 +45,7 @@ class _AssessmentsState extends State<Assessments> {
       GenderSelectionScreen(pageController: _pageController),
       WeightSelectionScreen(pageController: _pageController),
       AgeSelectionScreen(pageController: _pageController,), // Example for additional page
+      FitnessExperienceScreen(pageController: _pageController,), // Example for additional page
     ];
   }
 

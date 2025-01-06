@@ -1,5 +1,7 @@
 import 'package:dynafit/views/assessments/cubit/assessment_cubit.dart';
 import 'package:dynafit/views/assessments/screen/assessments.dart';
+import 'package:dynafit/views/home/cubit/home_cubit.dart';
+import 'package:dynafit/views/home/screen/home_screen.dart';
 import 'package:dynafit/views/sign_in/screen/sign_in_screen.dart';
 import 'package:dynafit/views/sign_up/screen/sign_up_screen.dart';
 import 'package:dynafit/views/splash_screen/splash_screen.dart';
@@ -12,6 +14,7 @@ class AppRoutes{
   static const String signIn = "/signIn";
   static const String signUp = "/signUp";
   static const String assessments = "/assessments";
+  static const String home = "/home";
 
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
@@ -39,6 +42,15 @@ class AppRoutes{
           return BlocProvider(
             create: (_) => AssessmentCubit(),
             child: const Assessments(),
+          );
+        },
+      ),
+      GoRoute(
+        path: AppRoutes.home,
+        builder: (BuildContext context, GoRouterState state) {
+          return BlocProvider(
+            create: (_) => HomeCubit(),
+            child: const HomeScreen(),
           );
         },
       ),

@@ -29,18 +29,3 @@ class _MyAppWidgetState extends State<MyAppWidget> {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            context.push(AppRoutes.signIn);
-          },
-          child: const Text("Splash Page"),
-        ),
-      ),
-    );
-  }
-}

@@ -1,3 +1,4 @@
+import 'package:dynafit/core/constants/app_colors.dart';
 import 'package:dynafit/core/constants/app_strings.dart';
 import 'package:dynafit/core/constants/app_text_style.dart';
 import 'package:dynafit/ui_components/common_elevated_button/common_elevated_button.dart';
@@ -71,13 +72,13 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
           children: [
             Text(
               '$_currentValue ',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 100,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
-            Text(
+            const Text(
               'kg',
               style: TextStyle(
                 fontSize: 50,
@@ -88,7 +89,7 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
 
           ],
         ),
-        SizedBox(height: 16), // Add some spacing between the text and the slider
+        horizontalSpacer(16),
         // The WheelSlider
         SizedBox(
           height: 200,
@@ -97,22 +98,22 @@ class _WeightSelectionScreenState extends State<WeightSelectionScreen> {
             initValue: _currentValue - minValue, // Map initValue to the range
             controller: _controller,
             squeeze: 0.6,
-            lineColor: Colors.red,
+            lineColor: AppColors.darkSubtext,
             pointerHeight: 80,
             pointerWidth: 20,
             pointerColor: Colors.transparent,
             isVibrate: false,
             onValueChanged: (val) {
               setState(() {
-                _currentValue = val + minValue; // Map value back to the range
+                _currentValue = val + minValue;
               });
             },
             hapticFeedbackType: HapticFeedbackType.vibrate,
             customPointer: Container(
               height: 80,
               width: 10,
-              decoration: BoxDecoration(
-                color: Colors.blue, // Pointer background color
+              decoration: const BoxDecoration(
+                color: AppColors.orange,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(8),bottom: Radius.circular(4)),
                 boxShadow: [
                   BoxShadow(
