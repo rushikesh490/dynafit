@@ -57,7 +57,10 @@ class _FitnessExperienceScreenState extends State<FitnessExperienceScreen> {
         children: [
           GestureDetector(
             onTap: (){
-              context.push(AppRoutes.home);
+              widget.pageController.nextPage(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+              );
             },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -116,7 +119,10 @@ class _FitnessExperienceScreenState extends State<FitnessExperienceScreen> {
           horizontalSpacer(20),
           GestureDetector(
             onTap: (){
-              context.push(AppRoutes.home);
+              widget.pageController.nextPage(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+              );
             },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),

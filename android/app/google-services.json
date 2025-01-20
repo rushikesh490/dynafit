@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "492101291390",
+    "project_id": "dynafit-4c369",
+    "storage_bucket": "dynafit-4c369.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492101291390:android:878371cb0f69baa795372f",
+        "android_client_info": {
+          "package_name": "com.dynafit.dynafit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGa5uvhvNz6SEZYsbc4QrzeKiLqK-Tsqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

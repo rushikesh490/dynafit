@@ -10,6 +10,10 @@ class AppAssets {
   static const String darkFemale = "assets/logo/darkFemale.png";
   static const String fitnessExperience = "assets/logo/fitnessExperiience.png";
   static const String fitnessExperienceDark = "assets/logo/fitnessExperienceDark.png";
+  static const String dumbbellExcercise = "assets/logo/dumbbellExcercise.png";
+  static const String platesExcercise = "assets/logo/platesExcercise.png";
+  static const String skippingExcercise = "assets/logo/skippingExcercise.png";
+  static const String yogaExcercise = "assets/logo/yogaExcercise.png";
 
   /// svg
   static const String aiCoach = "assets/svg/aiCoach.svg";

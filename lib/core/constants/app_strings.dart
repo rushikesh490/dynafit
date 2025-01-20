@@ -2,6 +2,7 @@ class AppStrings {
   static const signInToDynafit = "Sign In to Dynafit";
   static const signIn = "Sign In";
   static const kContinue = "Continue";
+  static const enterYourName = "Enter your name";
   static const enterYourEmail = "Enter your email";
   static const enterYourPassword = "Enter your password";
   static const dontHaveAnAccount = "Don't have an account?";
@@ -23,5 +24,23 @@ class AppStrings {
   static const female = "Female";
   static const no = "No";
   static const yes = "Yes";
-  static const activities = "Activities";
+  static const workouts = "Workouts";
+  static const dietAndNutrition = "Diet & Nutrition";
+  static const dynamicStretching = "Go for dynamic stretching";
+  static const bodyMuscular = "Make your body Muscular";
+  static const looseYourWeight = "Loose your Weight and achieve your goals";
+  static const yogaDescription = "Meditations makes you relax";
+  static const stretching = "Stretching";
+  static const bodyBuilding = "Body Building";
+  static const skipping = "Skipping";
+  static const yoga = "Yoga";
+  static const general = "General";
+  static const personalInformation = "Personal Information";
+  static const help = "Help and Services 😊";
+  static const privacyPolicy = "Privacy and Policy";
+  static const lightTheme = "Light Theme";
+  static const darkTheme = "Dark Theme";
+  static const logout = "Log out";
+  static const signOut = "Sign out";
+  static const fieldEmpty = "Fields can't be empty";
 }

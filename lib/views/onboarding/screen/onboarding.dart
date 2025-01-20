@@ -2,26 +2,28 @@ import 'package:dynafit/core/constants/app_colors.dart';
 import 'package:dynafit/core/constants/app_strings.dart';
 import 'package:dynafit/core/constants/app_text_style.dart';
 import 'package:dynafit/ui_components/ver_spacer/ver_spacer.dart';
-import 'package:dynafit/views/assessments/cubit/assessment_cubit.dart';
-import 'package:dynafit/views/assessments/screen/age_selection/age_selection_screen.dart';
-import 'package:dynafit/views/assessments/screen/fitness_experience/fitness_experience_screen.dart';
-import 'package:dynafit/views/assessments/screen/fitness_goals/fitness_goals_screen.dart';
-import 'package:dynafit/views/assessments/screen/gender_selection/gender_selection_screen.dart';
-import 'package:dynafit/views/assessments/screen/weight_selection/weight_selection_screen.dart';
+import 'package:dynafit/views/onboarding/cubit/onboarding_cubit.dart';
+import 'package:dynafit/views/onboarding/screen/fitness_goals/fitness_goals_screen.dart';
+import 'package:dynafit/views/onboarding/screen/gender_selection/gender_selection_screen.dart';
+import 'package:dynafit/views/onboarding/screen/sign_up/sign_up_screen.dart';
+import 'package:dynafit/views/onboarding/screen/weight_selection/weight_selection_screen.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Assessments extends StatefulWidget {
-  const Assessments({super.key});
+import 'age_selection/age_selection_screen.dart';
+import 'fitness_experience/fitness_experience_screen.dart';
+
+class Onboarding extends StatefulWidget {
+  const Onboarding({super.key});
 
   @override
-  State<Assessments> createState() => _AssessmentsState();
+  State<Onboarding> createState() => _OnboardingState();
 }
 
-class _AssessmentsState extends State<Assessments> {
+class _OnboardingState extends State<Onboarding> {
 
-  late AssessmentCubit assessmentCubit;
+  late OnboardingCubit onboardingCubit;
   final PageController _pageController = PageController();
   int currentPage = 0;
   late List<Widget> pages;
@@ -34,18 +36,19 @@ class _AssessmentsState extends State<Assessments> {
   @override
   void initState() {
     super.initState();
-    assessmentCubit = context.read<AssessmentCubit>();
+    onboardingCubit = context.read<OnboardingCubit>();
 
     _pageController.addListener(() {
-        assessmentCubit.changePage(_pageController.page?.round() ?? 0);
+      onboardingCubit.changePage(_pageController.page?.round() ?? 0);
     });
 
     pages = [
-      FitnessGoalsScreen(pageController: _pageController),
+      FitnessGoalsScreen(pageController: _pageController,onboardingCubit: onboardingCubit,),
       GenderSelectionScreen(pageController: _pageController),
       WeightSelectionScreen(pageController: _pageController),
       AgeSelectionScreen(pageController: _pageController,), // Example for additional page
       FitnessExperienceScreen(pageController: _pageController,), // Example for additional page
+      SignUpScreen(pageController: _pageController,), // Example for additional page
     ];
   }
 
@@ -57,17 +60,17 @@ class _AssessmentsState extends State<Assessments> {
 
   @override
   Widget build(BuildContext context) =>
-      BlocConsumer<AssessmentCubit, AssessmentState>(
+      BlocConsumer<OnboardingCubit, OnboardingState>(
           builder: _builder, listener: _listener);
 
-  void _listener(BuildContext context, AssessmentState state) {
-    if (state is AssessmentPageChange) {
+  void _listener(BuildContext context, OnboardingState state) {
+    if (state is OnboardingPageChange) {
       print(state.count);
       currentPage = state.count;
     }
   }
 
-  Widget _builder(BuildContext context, AssessmentState state) {
+  Widget _builder(BuildContext context, OnboardingState state) {
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -76,7 +79,7 @@ class _AssessmentsState extends State<Assessments> {
               physics: const NeverScrollableScrollPhysics(),
               controller: _pageController,
               onPageChanged: (index) {
-                assessmentCubit.changePage(index);
+                onboardingCubit.changePage(index);
               },
               children: pages,
             ),

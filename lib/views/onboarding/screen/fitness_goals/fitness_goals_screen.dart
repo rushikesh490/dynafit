@@ -5,13 +5,15 @@ import 'package:dynafit/core/constants/app_text_style.dart';
 import 'package:dynafit/ui_components/common_check_box/common_check_box.dart';
 import 'package:dynafit/ui_components/common_elevated_button/common_elevated_button.dart';
 import 'package:dynafit/ui_components/ver_spacer/ver_spacer.dart';
+import 'package:dynafit/views/onboarding/cubit/onboarding_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FitnessGoalsScreen extends StatelessWidget {
-  FitnessGoalsScreen({super.key,required this.pageController});
+  FitnessGoalsScreen({super.key,required this.pageController,required this.onboardingCubit});
 
   final PageController pageController;
+  final OnboardingCubit onboardingCubit;
 
   bool isDarkTheme(BuildContext context) {
     final theme = Theme.of(context);

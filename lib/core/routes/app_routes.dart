@@ -1,9 +1,13 @@
-import 'package:dynafit/views/assessments/cubit/assessment_cubit.dart';
-import 'package:dynafit/views/assessments/screen/assessments.dart';
+import 'package:dynafit/views/account/view/account_screen.dart';
+import 'package:dynafit/views/dashboard/cubit/dashboard_cubit.dart';
+import 'package:dynafit/views/dashboard/view/dashboard_screen.dart';
 import 'package:dynafit/views/home/cubit/home_cubit.dart';
 import 'package:dynafit/views/home/screen/home_screen.dart';
+import 'package:dynafit/views/onboarding/cubit/onboarding_cubit.dart';
+import 'package:dynafit/views/onboarding/screen/onboarding.dart';
+import 'package:dynafit/views/personal_information/cubit/personal_information_cubit.dart';
+import 'package:dynafit/views/personal_information/view/personal_information.dart';
 import 'package:dynafit/views/sign_in/screen/sign_in_screen.dart';
-import 'package:dynafit/views/sign_up/screen/sign_up_screen.dart';
 import 'package:dynafit/views/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,8 +17,11 @@ class AppRoutes{
   static const String splash = "/";
   static const String signIn = "/signIn";
   static const String signUp = "/signUp";
-  static const String assessments = "/assessments";
+  static const String onboarding = "/onboarding";
+  static const String dashboard = "/dashboard";
   static const String home = "/home";
+  static const String account = "/account";
+  static const String personalInformation = "/personalInformation";
 
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
@@ -31,17 +38,20 @@ class AppRoutes{
         },
       ),
       GoRoute(
-        path: signUp,
+        path: AppRoutes.onboarding,
         builder: (BuildContext context, GoRouterState state) {
-          return const SignUpScreen();
+          return BlocProvider(
+            create: (_) => OnboardingCubit(),
+            child: const Onboarding(),
+          );
         },
       ),
       GoRoute(
-        path: AppRoutes.assessments,
+        path: AppRoutes.dashboard,
         builder: (BuildContext context, GoRouterState state) {
           return BlocProvider(
-            create: (_) => AssessmentCubit(),
-            child: const Assessments(),
+            create: (_) => DashboardCubit(),
+            child: const DashboardScreen(),
           );
         },
       ),
@@ -54,6 +64,24 @@ class AppRoutes{
           );
         },
       ),
+      GoRoute(
+        path: AppRoutes.account,
+        builder: (BuildContext context, GoRouterState state) {
+          return BlocProvider(
+            create: (_) => HomeCubit(),
+            child: const AccountScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        path: AppRoutes.personalInformation,
+        builder: (BuildContext context, GoRouterState state) {
+          return BlocProvider(
+            create: (_) => PersonalInformationCubit(),
+            child: const PersonalInformation(),
+          );
+        },
+      )
     ],
   );
 

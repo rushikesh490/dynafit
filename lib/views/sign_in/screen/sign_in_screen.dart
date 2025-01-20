@@ -3,6 +3,7 @@ import 'package:dynafit/core/constants/app_assets.dart';
 import 'package:dynafit/core/constants/app_strings.dart';
 import 'package:dynafit/core/constants/app_text_style.dart';
 import 'package:dynafit/core/routes/app_routes.dart';
+import 'package:dynafit/core/utils/utils.dart';
 import 'package:dynafit/ui_components/common_elevated_button/common_elevated_button.dart';
 import 'package:dynafit/ui_components/common_textfield/common_text_field.dart';
 import 'package:dynafit/ui_components/ver_spacer/ver_spacer.dart';
@@ -105,7 +106,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   _signInButton() => CommonElevatedButton(
         onPressed: () {
-          context.push(AppRoutes.assessments);
+          context.push(AppRoutes.home);
         },
         height: 63,
         isValid: true,
@@ -114,7 +115,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   _signUpText() => GestureDetector(
     onTap: (){
-      context.push(AppRoutes.signUp);
+      context.push(AppRoutes.onboarding);
     },
     child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
